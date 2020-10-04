@@ -1,0 +1,13 @@
+.logo {
+  border-right: 1px solid lightgray;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo .logo__image {
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}

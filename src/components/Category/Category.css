@@ -1,0 +1,19 @@
+.category {
+  box-shadow: 0 0px 10px 4px lightgray;
+  background-color: white;
+  color: rgb(var(--primary-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.category__icon {
+  margin-bottom: 25px;
+}
+
+.category__name {
+  font-weight: normal;
+}
+
+

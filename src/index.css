@@ -1,3 +1,7 @@
+:root {
+  --primary-color: 255, 85, 170;
+}
+
 body {
   background-color: beige;
   margin: 0;
@@ -12,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -19,4 +27,11 @@ button {
 a, a[href] {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+
+menu, nav, ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

@@ -1,0 +1,39 @@
+.search-result:not(:last-of-type) {
+  position: relative;
+  border-bottom: 1px solid lightgray;
+}
+
+.search-result .search-result__title {
+  transition: .5s color;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.search-result:hover .search-result__title {
+  color: rgb(var(--primary-color))
+}
+
+.search-result .search-result__description {
+  color: gray;
+  margin: 0;
+  font-size: .88em;
+}
+
+.search-result .search-result__image {
+  position: absolute;
+  right: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 35px;
+  width: 35px;
+  border: 1px solid lightgray;
+}
+
+.search-result__link {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  width: 100%;
+}
