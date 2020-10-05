@@ -1,11 +1,12 @@
 import React from 'react'
 import Category from '../Category/Category'
+import './CategoriesList.css'
 
-export default function CategorysList ({ categories }) {
+export default function CategoriesList ({ categories }) {
   return (
     <ul className='categories-list'>
       {categories.map(category =>
-        <Category key={category.id} category={category} />
+        <Category key={category.name} category={category} />
       )}
     </ul>
   )

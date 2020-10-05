@@ -1,19 +1,26 @@
 .category {
-  box-shadow: 0 0px 10px 4px lightgray;
   background-color: white;
-  color: rgb(var(--primary-color));
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 200px;
+  width: 200px;
+}
 
+.category__link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .category__icon {
   margin-bottom: 25px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: rgb(var(--primary-color));
 }
 
 .category__name {
-  font-weight: normal;
+  font-weight: 100;
+  margin: 0;
 }
-
-

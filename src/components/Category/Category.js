@@ -1,15 +1,22 @@
 import React from 'react'
 import './Category.css'
 
-export default function Category ({ icon, name }) {
+export default function Category ({ category }) {
+  const icon = (category.icon.includes('.'))
+    ? <img
+      className='category__icon'
+      src={category.icon}
+      alt={category.name}
+    />
+    : <span className={`category__icon fal fa-${category.icon}`}/>
+
+
   return (
-    <div className='category'>
-      <img
-        className='category__icon'
-        src={icon}
-        alt={name}
-      />
-      <h4 className='category__name'>{name}</h4>
-    </div>
+    <li className='category'>
+      <a href className='category__link'>
+        {icon}
+        <h4 className='category__name'>{category.name}</h4>
+      </a>
+    </li>
   )
 }

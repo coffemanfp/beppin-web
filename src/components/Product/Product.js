@@ -17,7 +17,13 @@ export default class Product extends Component {
 
   handleNextImage () {
     const lastImageIndex = this.props.product.images.length - 1
-    if (this.state.currentImage === lastImageIndex) return
+
+    if (this.state.currentImage === lastImageIndex) {
+      this.setState({
+        currentImage: 0
+      })
+      return
+    }
 
     this.setState({
       currentImage: this.state.currentImage + 1
@@ -25,7 +31,14 @@ export default class Product extends Component {
   }
 
   handlePrevImage () {
-    if (this.state.currentImage === 0) return
+    const lastImageIndex = this.props.Images.length - 1
+
+    if (this.state.currentImage === 0) {
+      this.setState({
+        currentImage: lastImageIndex
+      })
+      return
+    }
 
     this.setState({
       currentImage: this.state.currentImage - 1

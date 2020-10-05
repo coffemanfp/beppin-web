@@ -3,6 +3,8 @@ import MainHeader from './components/MainHeader/MainHeader'
 import products from './data/products'
 import logo from './img/logo.png'
 import './App.css'
+import Banner from './components/Banner/Banner'
+import banner from './data/banner'
 
 export default class App extends Component {
   constructor (props) {
@@ -17,6 +19,7 @@ export default class App extends Component {
     return (
       <>
         <MainHeader logo={logo} />
+        <Banner slides={banner}/>
         <main className='main-content'>
         </main>
         <footer className='main-footer'>
