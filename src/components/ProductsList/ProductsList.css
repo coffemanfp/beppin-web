@@ -1,6 +1,6 @@
 .products-list {
   display: flex;
-  align-items: center;
+  /* align-items: center;  */
 }
 
 .products-list .product:not(:last-of-type) {

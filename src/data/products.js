@@ -7,6 +7,7 @@ const products = [
     name: 'Laptop XPS 17',
     description: 'Super Laptop XPS 17 lightweight',
     price: 850,
+    currency: '$',
     isFavorite: true,
     images: [
       {
@@ -24,6 +25,7 @@ const products = [
     name: 'Smart Tv',
     description: 'Super Smart Tv',
     price: 500,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -43,13 +45,15 @@ const products = [
     id: 3,
     name: 'Blue pen',
     description: 'Amazing big text lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, molestiae. amet consectetur adipisicing elit.',
-    price: 200
+    price: 200,
+    currency: '$'
   },
   {
     id: 4,
     name: 'Redmi Note 9',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -66,6 +70,7 @@ const products = [
     name: 'Redmi Note 10',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -82,6 +87,7 @@ const products = [
     name: 'Redmi Note 11',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -98,6 +104,7 @@ const products = [
     name: 'Redmi Note 12',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -114,6 +121,7 @@ const products = [
     name: 'Redmi Note 13',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -130,6 +138,7 @@ const products = [
     name: 'Redmi Note 14',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
@@ -146,6 +155,7 @@ const products = [
     name: 'Redmi Note 15',
     description: '4gb RAM, 128gb ROM',
     price: 700,
+    currency: '$',
     images: [
       {
         id: 1,
