@@ -2,10 +2,15 @@
   position: relative;
   margin: 20px;
   display: flex;
-  grid-gap: 1px;
-  background-color: black;
-  box-shadow: 0 0px 10px 4px lightgray;
   overflow-x: auto;
+}
+
+.categories-list.categories-list--grid {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1px;
 }
 
 .categories-list .category {
