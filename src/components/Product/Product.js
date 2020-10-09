@@ -31,7 +31,7 @@ export default class Product extends Component {
   }
 
   handlePrevImage () {
-    const lastImageIndex = this.props.Images.length - 1
+    const lastImageIndex = this.props.product.images.length - 1
 
     if (this.state.currentImage === 0) {
       this.setState({
@@ -47,7 +47,7 @@ export default class Product extends Component {
 
   render () {
     const { product } = this.props
-    const imageTransation = {
+    const imageTransationStyle = {
       transform: `translate3d(${(this.state.currentImage) * 100 * -1}%, 0, 0)`
     }
     const images = product.images || false
@@ -63,7 +63,7 @@ export default class Product extends Component {
     return (
       <div className='product'>
         <div className='product__presentation'>
-          <ul className='product__images' style={imageTransation}>
+          <ul className='product__images' style={imageTransationStyle}>
             {(!images && !images.length) &&
               <ProductImage
                 image={{ url: noImage }}
@@ -84,14 +84,14 @@ export default class Product extends Component {
               <Button
                 type='icon'
                 onClick={this.handlePrevImage}
-                className='product__arrow'
+                className='product__presentation-control'
               >
                 <span className='fal fa-arrow-left' />
               </Button>
               <Button
                 type='icon'
                 onClick={this.handleNextImage}
-                className='product__arrow'
+                className='product__presentation-control'
               >
                 <span className='fal fa-arrow-right' />
               </Button>
