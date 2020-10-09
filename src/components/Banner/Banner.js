@@ -45,13 +45,13 @@ export default class Banner extends Component {
   }
 
   render () {
-    const slideTransation = {
+    const slideTransationStyle = {
       transform: `translate3d(${(this.state.currentSlide) * 100 * -1}%, 0, 0)`
     }
 
     return (
       <div className='banner'>
-        <ul className='banner__slides' style={slideTransation}>
+        <ul className='banner__slides' style={slideTransationStyle}>
           {this.props.slides.map((slide, i) => 
             <li
               key={i}
