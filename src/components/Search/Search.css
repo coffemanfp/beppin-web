@@ -1,5 +1,6 @@
 .search .search-results {
   position: fixed;
+  z-index: 100;
   top: 130px;
   left: 25px;
   right: 25px;

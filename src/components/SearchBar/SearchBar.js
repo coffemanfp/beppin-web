@@ -31,7 +31,7 @@ export default class SearchBar extends Component {
         className='search-bar'
         onSubmit={this.handleSubmit}
       >
-        <div className={`search-bar__container ${(this.state.isActived) ? 'search-bar__container--actived' : ''}`}>
+        <div onKeyPress={e => console.log(e.key)} className={`search-bar__container ${(this.state.isActived) ? 'search-bar__container--actived' : ''}`}>
           <input
             type='text'
             className='search-bar__control'

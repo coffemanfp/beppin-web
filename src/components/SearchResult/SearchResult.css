@@ -1,6 +1,12 @@
+.search-result {
+  background-color: white;
+  border-radius: 25px;
+}
+
 .search-result:not(:last-of-type) {
   position: relative;
   border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
 }
 
 .search-result .search-result__title {

@@ -1,8 +1,9 @@
 .search-results {
-  background-color: white;
+  background-color: rgba(100, 100, 100, .4);
   border-radius: 25px;
   border: 1px solid lightgray;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 400px;
+  padding: 10px;
 }
