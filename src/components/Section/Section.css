@@ -1,0 +1,22 @@
+.section {
+  padding: 20px;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section__title {
+  color: gray;
+  font-size: 1.6em;
+}
+
+.section__content {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 30px;
+}
