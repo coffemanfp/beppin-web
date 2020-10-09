@@ -1,5 +1,6 @@
 .dialog {
   background-color: rgba(0, 0, 0, .4);
+  max-width: 400px;
 }
 
 .dialog .dialog__header {
