@@ -9,13 +9,17 @@ export default class Search extends Component {
     super(props)
 
     this.state = {
+      isSearchBarActived: false,
       results: []
     }
 
     this.search = this.search.bind(this)
+    this.toggleSearchBar = this.toggleSearchBar.bind(this)
   }
 
   search (input) {
+    console.log('search')
+
     if (!input) {
       this.setState({ results: [] })
       return
@@ -36,14 +40,21 @@ export default class Search extends Component {
     this.setState({ results })
   }
 
+  toggleSearchBar () {
+    this.setState({ isSearchBarActived: !this.state.isSearchBarActived })
+  }
+
   render () {
     const { results } = this.state
     return (
       <div className='search'>
-        <SearchBar search={this.search}/>
-        {results.length > 0 &&
-          <SearchResults results={this.state.results} />
-        }
+        <SearchBar
+          search={this.search}
+          handleToggleSearchBar={this.toggleSearchBar}
+          isActived={this.state.isSearchBarActived}
+        />
+        {(results.length > 0 && this.state.isSearchBarActived) &&
+          <SearchResults results={results} />}
       </div>
     )
   }

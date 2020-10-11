@@ -25,25 +25,55 @@
   top: 75px;
 }
 
-.search-bar__submit {
+.search-bar .search-bar__submit {
   margin-left: 8px;
   flex-shrink: 0;
   background-color: white;
 }
 
-.search-bar .search-bar__control:focus + .search-bar__trigger {
-  margin-left: 5px;
+.search-bar .search-bar__submit:focus {
+  flex-shrink: 0;
+  background-color: white;
+  border-color: rgb(var(--primary-color));
+  background-color: rgb(var(--primary-color));
+}
+
+.search-bar .search-bar__control:focus + .search-bar__submit {
+  color: white;
 }
 
 .search-bar .search-bar__control:focus {
   border-color: rgb(var(--primary-color));
 }
 
-.search-bar .search-bar__control:focus + .search-bar__trigger {
+.search-bar .search-bar__control:focus + .search-bar__submit {
   border-color: rgb(var(--primary-color));
   background-color: rgb(var(--primary-color));
 }
 
-.search-bar .search-bar__trigger:hover {
+.search-bar .search-bar__submit:hover {
   background-color: rgb(var(--primary-color));
+}
+
+@media (min-width: 720px) {
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar .search-bar__container {
+    position: static;
+  }
+
+  .search-bar {
+    margin-left: 8px;
+  }
+
+  .search-bar .search-bar__submit.search-bar__submit--mobile {
+    display: none;
+  }
+
+  .search-bar .search-bar__submit {
+    display: inline-block;
+  }
 }

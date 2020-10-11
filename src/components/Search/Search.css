@@ -5,3 +5,12 @@
   left: 25px;
   right: 25px;
 }
+
+@media (min-width: 720px) {
+  .search .search-results {
+    top: 80px;
+    left: 75px;
+    right: auto;
+    width: 280px;
+  }
+}
