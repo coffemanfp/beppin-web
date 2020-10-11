@@ -1,21 +1,23 @@
 import React from 'react'
 import Product from '../Product/Product'
+import Slider from '../Slider/Slider'
 import './ProductsList.css'
 
-export default function ProductsList ({ products, isGrid }) {
-  console.log(products[0].price)
+export default function ProductsList ({ products }) {
+  const productsElement = products.map(product =>
+    <Product
+      key={product.id}
+      name={product.name}
+      images={product.images}
+      currency={product.currency}
+      price={product.price}
+    />
+  )
 
   return (
-    <ul className='products-list'>
-      {products.map(product =>
-        <Product
-          key={product.id}
-          images={product.images}
-          name={product.name}
-          currency={product.currency}
-          price={product.price}
-        />
-      )}
-    </ul>
+    <Slider
+      className='products-list'
+      slides={productsElement}
+    />
   )
 }

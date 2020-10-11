@@ -18,7 +18,6 @@ export default function Product (props) {
         <p className='product__price'>
           <span className='product__currency'>{props.currency}</span> <span className='product__amount'>{props.price}</span>
         </p>
-        <p className='product__name'>{props.name}</p>
       </div>
     </a>
   )

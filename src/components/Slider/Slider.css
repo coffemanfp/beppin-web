@@ -1,19 +1,19 @@
-.products-list {
+.slider {
   position: relative;
   overflow-x: hidden;
 }
 
-.products-list .products-list__products {
+.slider .slider__slides {
   transition: .5s transform;
   display: flex;
 }
 
-.products-list .products-list__product {
+.slider .slider__slide {
   min-width: 100%;
   text-align: center;
 }
 
-.products-list .products-list__controls {
+.slider .slider__controls {
   transition: .5s opacity;
   position: absolute;
   left: 25px;
@@ -24,14 +24,14 @@
   opacity: 0;
 }
 
-.products-list:hover .products-list__controls {
+.slider:hover .slider__controls {
   opacity: 1;
 }
 
-.products-list .products-list__control {
+.slider .slider__control {
   background-color: white;
 }
 
-.products-list .products-list__control:hover, .products-list .products-list__control:focus {
+.slider .slider__control:hover, .slider .slider__control:focus {
   background-color: rgb(var(--primary-color));
 }

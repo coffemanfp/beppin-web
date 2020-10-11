@@ -4,12 +4,10 @@
   background-color: white;
   overflow: hidden;
   height: 180px;
+  min-width: 180px;
   width: 180px;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .1);
-}
-
-.product:hover {
-  height: 230px;
+  display: inline-block;
 }
 
 .product .product__presentation {

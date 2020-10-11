@@ -1,0 +1,47 @@
+.store {
+  min-width: 250px;
+  max-width: 320px;
+  overflow: hidden;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.store:hover .store__name {
+  bottom: 10px;
+  opacity: 1;
+}
+
+.store .store__presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 30px;
+  position: relative;
+}
+
+.store .store__logo-container {
+  overflow: hidden;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.store .store__logo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.store .store__name {
+  transition: .5s;
+  color: white;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  opacity: 0;
+}
