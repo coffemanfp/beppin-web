@@ -13,6 +13,7 @@
 .product .product__presentation {
   border-bottom: 1px solid lightgray;
   text-align: center;
+  height: 75%;
 }
 
 .product .product__image {
@@ -27,6 +28,7 @@
 
 .product .product__price {
   margin-top: 0;
+  text-align: left;
 }
 
 .product .product__name {

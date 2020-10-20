@@ -1,5 +1,5 @@
-import exampleImage1 from './../img/rsz_loginpresentation.jpg'
-import exampleImage2 from './../img/rsz_signuppresentation.jpg'
+import laptopImage from './../img/laptop.png'
+import monitorImage from './../img/monitor.png'
 
 const products = [
   {
@@ -12,11 +12,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: monitorImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -29,11 +29,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: laptopImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ],
     offert: {
@@ -57,11 +57,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: monitorImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -74,11 +74,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: laptopImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -91,11 +91,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: monitorImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -108,11 +108,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: monitorImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -125,11 +125,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: laptopImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -142,11 +142,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: monitorImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   },
@@ -159,11 +159,11 @@ const products = [
     images: [
       {
         id: 1,
-        url: exampleImage1
+        url: laptopImage
       },
       {
         id: 2,
-        url: exampleImage2
+        url: laptopImage
       }
     ]
   }

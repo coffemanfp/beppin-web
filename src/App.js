@@ -1,6 +1,7 @@
 import React from 'react'
 import MainHeader from './components/MainHeader/MainHeader'
 import Banner from './components/Banner/Banner'
+import CategoriesList from './components/CategoriesList/CategoriesList'
 import ProductsList from './components/ProductsList/ProductsList'
 import StoresList from './components/StoresList/StoresList'
 import Section from './components/Section/Section'
@@ -9,6 +10,7 @@ import './App.css'
 import banner from './data/banner'
 import products from './data/products'
 import stores from './data/stores'
+import categories from './data/categories'
 
 export default function App () {
   return (
@@ -21,6 +23,9 @@ export default function App () {
         </Section>
         <Section title='Our stores'>
           <StoresList stores={stores.slice(0, 5)} />
+        </Section>
+        <Section title='Categories'>
+          <CategoriesList categories={categories.slice(0, 10)} />
         </Section>
       </main>
       <footer className='main-footer'>

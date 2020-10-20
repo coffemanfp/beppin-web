@@ -1,18 +1,8 @@
 .categories-list {
-  position: relative;
-  margin: 20px;
-  display: flex;
-  overflow-x: auto;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.categories-list.categories-list--grid {
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  grid-gap: 1px;
-}
-
-.categories-list .category {
-  flex-shrink: 0;
+.categories-list .categories-list__category:not(:last-of-type) {
+  border-bottom: 1px solid rgb(235, 235, 235);
 }

@@ -8,15 +8,13 @@ export default function Category ({ category }) {
       src={category.icon}
       alt={category.name}
     />
-    : <span className={`category__icon fal fa-${category.icon}`}/>
+    : <span className={`category__icon fal fa-${category.icon}`} />
 
 
   return (
-    <li className='category'>
-      <a href className='category__link'>
-        {icon}
-        <h4 className='category__name'>{category.name}</h4>
-      </a>
-    </li>
+    <a href className='category'>
+      {icon}
+      <h4 className='category__name'>{category.name}</h4>
+    </a>
   )
 }
