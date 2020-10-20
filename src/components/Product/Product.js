@@ -6,7 +6,7 @@ export default function Product (props) {
   const image = (props.images && props.images.length > 0) ? props.images[0].url : noImage
 
   return (
-    <a className='product' href>
+    <a className='product'>
       <div className='product__presentation'>
         <img
           src={image}

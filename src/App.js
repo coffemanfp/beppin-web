@@ -17,10 +17,10 @@ export default function App () {
       <Banner slides={banner} />
       <main className='main-content'>
         <Section title='Hot'>
-          <ProductsList products={products.slice(0, 4)} />
+          <ProductsList products={products.slice(0, 5)} />
         </Section>
         <Section title='Our stores'>
-          <StoresList stores={stores.slice(0, 4)} />
+          <StoresList stores={stores.slice(0, 5)} />
         </Section>
       </main>
       <footer className='main-footer'>

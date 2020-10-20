@@ -6,17 +6,23 @@
   display: inline-block;
 }
 
+.store:hover .store__presentation {
+  background-color: rgba(0, 0, 0, .4)
+}
+
 .store:hover .store__name {
   bottom: 10px;
   opacity: 1;
 }
 
 .store .store__presentation {
+  transition: .5s background-color;
   display: flex;
   justify-content: center;
   align-items: center;
   background-size: cover;
   background-position: center;
+  background-blend-mode: darken;
   padding: 40px 30px;
   position: relative;
 }
@@ -44,4 +50,5 @@
   margin: 0;
   bottom: 0;
   opacity: 0;
+  display: block;
 }
