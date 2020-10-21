@@ -10,7 +10,7 @@
 }
 
 .search-result .search-result__title {
-  transition: .5s color;
+  transition: .25s color;
   margin-top: 0;
   margin-bottom: 10px;
 }

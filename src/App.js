@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Menu from './components/Menu/Menu'
 import MainHeader from './components/MainHeader/MainHeader'
 import Banner from './components/Banner/Banner'
 import CategoriesList from './components/CategoriesList/CategoriesList'
@@ -13,9 +14,16 @@ import stores from './data/stores'
 import categories from './data/categories'
 
 export default function App () {
+  const [isMenuActived, setIsMenuActived] = useState(false)
+
   return (
     <>
-      <MainHeader logo={logo} />
+      <MainHeader
+        logo={logo}
+        isMenuActived={isMenuActived}
+        triggerMenu={() => setIsMenuActived(!isMenuActived)}
+      />
+      <Menu isActived={isMenuActived} />
       <Banner slides={banner} />
       <main className='main-content'>
         <Section title='Hot'>
@@ -28,11 +36,6 @@ export default function App () {
           <CategoriesList categories={categories.slice(0, 10)} />
         </Section>
       </main>
-      <footer className='main-footer'>
-        <div>
-          {/* Icons made by <a href="https://www.flaticon.local/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.local/" title="Flaticon">www.flaticon.local</a> */}
-        </div>
-      </footer>
     </>
   )
 }

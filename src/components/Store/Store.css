@@ -16,7 +16,7 @@
 }
 
 .store .store__presentation {
-  transition: .5s background-color;
+  transition: .25s background-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
 }
 
 .store .store__name {
-  transition: .5s;
+  transition: .25s;
   color: white;
   position: absolute;
   margin: 0;

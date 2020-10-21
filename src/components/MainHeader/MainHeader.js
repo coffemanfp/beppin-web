@@ -4,16 +4,16 @@ import Search from '../Search/Search'
 import Button from '../Button/Button'
 import './MainHeader.css'
 
-export default function MainHeader ({ logo }) {
+export default function MainHeader ({ logo, triggerMenu, isMenuActived }) {
   return (
     <header className='main-header'>
       <Logo logo={logo} />
       <Search />
       <div className='main-header__options'>
         <Button
-          className='trigger-menu'
+          className={`trigger-menu ${(isMenuActived) ? 'trigger-menu--actived' : ''}`}
           type='icon'
-          handleClick={() => console.log('Launch menu')}
+          onClick={triggerMenu}
         >
           <span className='fal fa-bars' />
         </Button>

@@ -17,3 +17,7 @@
   align-items: center;
   padding-left: 10px;
 }
+
+.trigger-menu.trigger-menu--actived {
+  color: rgb(var(--primary-color))
+}

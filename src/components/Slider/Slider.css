@@ -4,7 +4,7 @@
 }
 
 .slider .slider__slides {
-  transition: .5s transform;
+  transition: .25s transform;
   display: flex;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .slider .slider__controls {
-  transition: .5s opacity;
+  transition: .25s opacity;
   position: absolute;
   left: 25px;
   right: 25px;
@@ -30,8 +30,4 @@
 
 .slider .slider__control {
   background-color: white;
-}
-
-.slider .slider__control:hover, .slider .slider__control:focus {
-  background-color: rgb(var(--primary-color));
 }

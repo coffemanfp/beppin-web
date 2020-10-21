@@ -1,36 +1,36 @@
 .button {
-  transition: .5s;
+  transition: .25s;
   border-radius: 25px;
   border: 1px solid gray;
   padding: .375rem .75rem;
   background-color: transparent;
 }
 
-.button--primary, .button--active, .button--secondary {
+.button.button--primary, .button.button--active, .button.button--secondary {
   border-color: white;
   color: white;
 }
 
-.button--primary, .button--active {
+.button.button--primary, .button.button--active {
   background-color: rgb(var(--primary-color));
 }
 
-.button--secondary {
+.button.button--secondary {
   border-color: #6c757d;
 }
 
-.button--secondary:hover, .button--secondary:focus {
+.button.button--secondary:hover {
   background-color: #6c757d;
 }
 
-.button--icon {
+.button.button--icon {
   border-radius: 50%;
   padding: 0;
   height: 30px;
   width: 30px;
 }
 
-.button--icon:hover, .button--icon:focus {
+.button.button--icon:hover {
   background-color: rgb(var(--primary-color));
   border-color: rgb(var(--primary-color));
   color: white;

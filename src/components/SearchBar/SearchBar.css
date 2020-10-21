@@ -1,9 +1,9 @@
 .search-bar {
-  transition: .5s;
+  transition: .25s;
 }
 
 .search-bar .search-bar__control {
-  transition: .5s border-color;
+  transition: .25s border-color;
   border-radius: 25px;
   border: 1px solid lightgray;
   padding: 8px 15px;
@@ -12,10 +12,10 @@
 }
 
 .search-bar .search-bar__container {
-  transition: .5s;
+  transition: .25s;
   position: fixed;
   z-index: 100;
-  top: -100vh;
+  top: -10vh;
   left: 25px;
   right: 25px;
   display: flex;
@@ -29,30 +29,6 @@
   margin-left: 8px;
   flex-shrink: 0;
   background-color: white;
-}
-
-.search-bar .search-bar__submit:focus {
-  flex-shrink: 0;
-  background-color: white;
-  border-color: rgb(var(--primary-color));
-  background-color: rgb(var(--primary-color));
-}
-
-.search-bar .search-bar__control:focus + .search-bar__submit {
-  color: white;
-}
-
-.search-bar .search-bar__control:focus {
-  border-color: rgb(var(--primary-color));
-}
-
-.search-bar .search-bar__control:focus + .search-bar__submit {
-  border-color: rgb(var(--primary-color));
-  background-color: rgb(var(--primary-color));
-}
-
-.search-bar .search-bar__submit:hover {
-  background-color: rgb(var(--primary-color));
 }
 
 @media (min-width: 720px) {
