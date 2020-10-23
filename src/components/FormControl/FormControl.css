@@ -1,0 +1,17 @@
+.form-control {
+  transition: .25s border-color;
+  border-radius: 25px;
+  border: 1px solid lightgray;
+  padding: 8px 15px;
+  display: inline-block;
+}
+
+.form-control:hover,
+.form-control:focus {
+  border-color: rgb(var(--primary-color));
+}
+
+.form-control.form-control--error {
+  color: red;
+  background-color: rgba(235, 76, 76, 0.487)
+}

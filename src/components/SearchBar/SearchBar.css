@@ -3,12 +3,14 @@
 }
 
 .search-bar .search-bar__control {
-  transition: .25s border-color;
-  border-radius: 25px;
-  border: 1px solid lightgray;
-  padding: 8px 15px;
-  display: inline-block;
   width: 100%;
+}
+
+.search-bar .search-bar__control:hover + .search-bar__submit,
+.search-bar .search-bar__control:focus + .search-bar__submit {
+  border-color: rgb(var(--primary-color));
+  background-color: rgb(var(--primary-color));
+  color: white;
 }
 
 .search-bar .search-bar__container {

@@ -1,16 +1,7 @@
 .main-menu {
-  min-width: 100vw;
-  height: 0;
+  height: 100%;
   overflow: hidden;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.main-menu.main-menu--actived {
-  height: 100%;
 }
 
 .main-menu .main-menu__options {

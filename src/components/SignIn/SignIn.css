@@ -1,0 +1,20 @@
+.sign-in {
+  padding: 15px;
+}
+
+.sign-in .sign-in__control {
+  width: 260px;
+}
+
+.sign-in .sign-in__title {
+  color: gray;
+}
+
+.sign-in .sign-in__submit {
+  width: 260px;
+  padding: 8px 15px;
+}
+
+.sign-in .sign-in__content > *:not(:last-child) {
+  margin-bottom: 10px;
+}

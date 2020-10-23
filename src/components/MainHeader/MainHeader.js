@@ -4,7 +4,7 @@ import Search from '../Search/Search'
 import Button from '../Button/Button'
 import './MainHeader.css'
 
-export default function MainHeader ({ logo, triggerMenu, isMenuActived }) {
+export default function MainHeader ({ logo, triggerAside, isMenuActived }) {
   return (
     <header className='main-header'>
       <Logo logo={logo} />
@@ -13,7 +13,7 @@ export default function MainHeader ({ logo, triggerMenu, isMenuActived }) {
         <Button
           className={`trigger-menu ${(isMenuActived) ? 'trigger-menu--actived' : ''}`}
           type='icon'
-          onClick={triggerMenu}
+          onClick={triggerAside}
         >
           <span className='fal fa-bars' />
         </Button>

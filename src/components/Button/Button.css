@@ -13,6 +13,7 @@
 
 .button.button--primary, .button.button--active {
   background-color: rgb(var(--primary-color));
+  border-color: rgb(var(--primary-color));
 }
 
 .button.button--secondary {

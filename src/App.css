@@ -6,3 +6,12 @@
 .trigger-menu:hover {
   color: rgb(var(--primary-color));
 }
+
+.main-wrapper {
+  display: flex;
+  padding-top: 61px;
+}
+
+.main-wrapper .main-wrapper__container:first-child {
+  width: 100%;
+}
