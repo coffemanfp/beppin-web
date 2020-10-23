@@ -1,9 +1,9 @@
 import React from 'react'
 import './Menu.css'
 
-export default function Menu ({ isActived, isUserLogged }) {
+export default function Menu ({ isUserLogged }) {
   return (
-    <menu className={`main-menu ${(isActived) ? 'main-menu--actived' : ''}`}>
+    <menu className='main-menu'>
       <li>
         <ul className='main-menu__options'>
           <li className='menu-option menu-option--actived main-menu__option'>

@@ -7,7 +7,7 @@ export default class Slider extends Component {
     super(props)
 
     this.state = {
-      currentSlide: 0
+      currentSlide: props.currentSlide || 0
     }
 
     this.handleNextSlide = this.handleNextSlide.bind(this)
@@ -51,16 +51,19 @@ export default class Slider extends Component {
   }
 
   render () {
+    const currentSlide = (this.props.currentSlide === undefined)
+      ? this.state.currentSlide
+      : this.props.currentSlide
     const itemsBySlide = this.props.itemsBySlide || 1
-
+    const withArrows = (this.props.withArrows === undefined) ? true : false
     const countSlides = this.getCountSlides()
 
-    if (this.state.currentSlide > countSlides) {
+    if (currentSlide > countSlides) {
       this.setState({ currentSlide: countSlides - 1 })
     }
 
     const slideTransationStyle = {
-      transform: `translate3d(${(this.state.currentSlide) * 100 * -1}%, 0, 0)`
+      transform: `translate3d(${(currentSlide) * 100 * -1}%, 0, 0)`
     }
     const className = (this.props.className) ? this.props.className : ''
 
@@ -82,7 +85,7 @@ export default class Slider extends Component {
               items={[...slide]}
             />)}
         </div>
-        {slides.length > 1 &&
+        {(withArrows && slides.length > 1) &&
           <div className='slider__controls'>
             <Button
               className='slider__control'

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
+import FormControl from '../FormControl/FormControl'
 import './SearchBar.css'
 
 export default class SearchBar extends Component {
@@ -28,12 +29,12 @@ export default class SearchBar extends Component {
         <div
           className={`search-bar__container ${(this.props.isActived) ? 'search-bar__container--actived' : ''}`}
         >
-          <input
-            type='text'
+          <FormControl
             className='search-bar__control'
-            name='search-bar'
-            value={this.state.search}
-            onChange={e => this.setState({ search: e.target.value })}
+            name='search'
+            placeHolder='What are you looking for?'
+            onChange={search => this.setState({ search })}
+            onFocus={() => this.props.activateSearchBar()}
           />
           <Button
             className='search-bar__submit'
