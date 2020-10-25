@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Slider from '../Slider/Slider'
 import Menu from '../Menu/Menu'
 import Cart from '../Cart/Cart'
@@ -7,8 +7,8 @@ import SignUp from '../SignUp/SignUp'
 import Button from '../Button/Button'
 import './Aside.css'
 
-export default function Aside ({ isActived, type }) {
-  const [currentSlide, setCurrentSlide] = useState(getSlideIndex(type))
+export default function Aside ({ isActived, type, triggerAside }) {
+  const currentSlide = getSlideIndex(type)
   const slides = [
     <Menu key={1} />,
     <Cart key={2} />,
@@ -17,10 +17,10 @@ export default function Aside ({ isActived, type }) {
   ]
 
   const navButtons = [
-    { icon: 'list', handleClick: () => setCurrentSlide(getSlideIndex('menu')) },
-    { icon: 'shopping-cart', handleClick: () => setCurrentSlide(getSlideIndex('cart')) },
-    { icon: 'user', handleClick: () => setCurrentSlide(getSlideIndex('login')) },
-    { icon: 'user-circle', handleClick: () => setCurrentSlide(getSlideIndex('signUp')) }
+    { icon: 'list', handleClick: () => triggerAside('menu') },
+    { icon: 'shopping-cart', handleClick: () => triggerAside('cart') },
+    { icon: 'user', handleClick: () => triggerAside('login') },
+    { icon: 'user-circle', handleClick: () => triggerAside('signUp') }
   ]
 
   return (

@@ -34,17 +34,20 @@
 }
 
 .cart-item .cart-item__price {
-  color: rgb(var(--primary-color))
+  color: rgb(var(--primary-color));
+  font-size: .9em;
 }
 
 .cart-item .cart-item__quantity {
   position: absolute;
   right: 15px;
   bottom: 15px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .cart-item .cart-item__quantity > *:not(:last-child) {
-  margin-right: 3px;
+  margin-right: 4px;
 }
 
 .cart-item .cart-item__control {

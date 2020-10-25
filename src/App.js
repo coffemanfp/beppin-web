@@ -14,14 +14,21 @@ import categories from './data/categories'
 import './App.css'
 
 export default function App () {
-  const [isAsideActived, setIsAsideActived] = useState(false)
+  const [typeAside, setTypeAside] = useState('')
+  const isAsideActived = typeAside !== ''
+
+  function triggerAside (type) {
+    if (!type) setTypeAside('')
+
+    setTypeAside(type)
+  }
 
   return (
     <>
       <MainHeader
         logo={logo}
-        isAsideActived={isAsideActived}
-        triggerAside={() => setIsAsideActived(!isAsideActived)}
+        typeAside={typeAside}
+        triggerAside={triggerAside}
       />
       <div className={`main-wrapper ${(isAsideActived) ? 'main-wrapper--with-aside' : ''}`}>
         <div className='main-wrapper__container'>
@@ -41,6 +48,8 @@ export default function App () {
         <div className='main-wrapper__container'>
           <Aside
             isActived={isAsideActived}
+            type={typeAside}
+            triggerAside={triggerAside}
           />
         </div>
       </div>

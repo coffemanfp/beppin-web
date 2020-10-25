@@ -1,12 +1,3 @@
-.trigger-menu, .trigger-menu:hover {
-  border: none;
-  background: none;
-}
-
-.trigger-menu:hover {
-  color: rgb(var(--primary-color));
-}
-
 .main-wrapper {
   display: flex;
   padding-top: 61px;
