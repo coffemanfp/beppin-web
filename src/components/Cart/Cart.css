@@ -8,7 +8,7 @@
 
 .cart.cart--no-items {
   justify-content: center;
-  background-color: #eee;
+  background: linear-gradient(to top, #9b9b9b 1%, #eee);
 }
 
 .cart.cart--no-items .no-items {
