@@ -22,6 +22,17 @@
   padding-left: 10px;
 }
 
-.trigger-menu.trigger-menu--actived {
+.main-header .main-header__option,
+.main-header .main-header__option:hover {
+  border: none;
+  background: none;
+}
+
+.main-header .main-header__option:hover {
+  color: rgb(var(--primary-color));
+}
+
+
+.main-header .main-header__option.main-header__option--actived {
   color: rgb(var(--primary-color))
 }

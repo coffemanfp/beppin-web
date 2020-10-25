@@ -2,8 +2,10 @@
   padding: 15px;
 }
 
-.sign-in .sign-in__control {
-  width: 260px;
+.sign-in .sign-in__control,
+.sign-in .sign-in__submit {
+  width: 100%;
+  max-width: 260px;
 }
 
 .sign-in .sign-in__title {
@@ -11,7 +13,6 @@
 }
 
 .sign-in .sign-in__submit {
-  width: 260px;
   padding: 8px 15px;
 }
 
