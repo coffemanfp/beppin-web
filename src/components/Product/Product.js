@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button/Button'
 import noImage from './../../img/no-image.png'
 import './Product.css'
 
@@ -18,6 +19,24 @@ export default function Product (props) {
         <p className='product__price'>
           <span className='product__currency'>{props.currency}</span> <span className='product__amount'>{props.price}</span>
         </p>
+        {props?.quantity > 0 &&
+          <div className='product__quantity'>
+            <Button
+              className='product__control'
+              type='icon'
+              onClick={props.handleSubtract}
+            >
+              <span className='fal fa-arrow-left' />
+            </Button>
+            <span className='product__count'>{props.quantity}</span>
+            <Button
+              className='product__control'
+              type='icon'
+              onClick={props.handleSum}
+            >
+              <span className='fal fa-arrow-right' />
+            </Button>
+          </div>}
       </div>
     </a>
   )
