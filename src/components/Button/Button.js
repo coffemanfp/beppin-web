@@ -1,13 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Button.css'
 
-export default function Button (props) {
+const Button = ({ type, className, onClick, children}) => {
   return (
     <button
-      className={`button ${(props.type) ? 'button--' + props.type : ''} ${props.className}`}
-      onClick={props.onClick}
+      className={`button ${(type) ? 'button--' + type : ''} ${className}`}
+      onClick={onClick}
     >
-      {props.children}
+      {children}
     </button>
   )
 }
+
+Button.propTypes = {
+  type: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.any.isRequired,
+
+  onClick: PropTypes.func
+}
+
+export default Button

@@ -1,17 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Slider from '../Slider/Slider'
 import Menu from '../Menu/Menu'
 import Cart from '../Cart/Cart'
 import Login from '../Login/Login'
 import SignUp from '../SignUp/SignUp'
 import Button from '../Button/Button'
+import cart from '../../data/cart'
 import './Aside.css'
 
-export default function Aside ({ isActived, type, triggerAside }) {
+const Aside = ({ isActived, type, triggerAside }) => {
   const currentSlide = getSlideIndex(type)
   const slides = [
     <Menu key={1} />,
-    <Cart key={2} />,
+    <Cart key={2} items={cart} />,
     <Login key={3} />,
     <SignUp key={4} />
   ]
@@ -40,13 +42,19 @@ export default function Aside ({ isActived, type, triggerAside }) {
       <div className='aside__content'>
         <Slider
           className='aside__slides'
-          currentSlide={currentSlide}
+          initialSlide={currentSlide}
           items={slides}
           withArrows={false}
         />
       </div>
     </aside>
   )
+}
+
+Aside.propTypes = {
+  isActived: PropTypes.bool.isRequired,
+  type: PropTypes.string.isRequired,
+  triggerAside: PropTypes.func.isRequired
 }
 
 function getSlideIndex (name) {
@@ -63,3 +71,5 @@ function getSlideIndex (name) {
       return 0
   }
 }
+
+export default Aside

@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Dialog.css'
 
-export default function Dialog ({ title, children }) {
+const Dialog = ({ title, children }) => {
   return (
     <div className='dialog'>
       {title &&
@@ -15,3 +16,10 @@ export default function Dialog ({ title, children }) {
     </div>
   )
 }
+
+Dialog.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.any
+}
+
+export default Dialog

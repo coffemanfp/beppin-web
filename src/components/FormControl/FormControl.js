@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import './FormControl.css'
 
-export default function FormControl (props) {
+const FormControl = props => {
   const type = props.type || 'input'
   const placeHolder = props.placeHolder || ''
   const name = props.name || ''
@@ -26,3 +27,13 @@ export default function FormControl (props) {
     />
   )
 }
+
+FormControl.propTypes = {
+  type: PropTypes.string,
+  placeHolder: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func
+}
+
+export default FormControl

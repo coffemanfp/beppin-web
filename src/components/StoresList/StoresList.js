@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Store from '../Store/Store'
 import Slider from '../Slider/Slider'
 import './StoresList.css'
 
-export default function StoresList (props) {
+const StoresList = ({ stores }) => {
   const [itemsBySlide, setItemBySlide] = useState(getItemsBySlide())
 
   window.addEventListener('resize', () => {
     setItemBySlide(getItemsBySlide())
   })
 
-  const storesList = props.stores.map(store =>
+  const storesList = stores.map(store =>
     <Store
       key={store.id}
       logo={store.logo}
@@ -28,6 +29,16 @@ export default function StoresList (props) {
   )
 }
 
+StoresList.propTypes = {
+  stores: PropTypes.arrayOf(
+    PropTypes.shape({
+      background: PropTypes.string.isRequired,
+      logo: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  )
+}
+
 function getItemsBySlide (innerWidth = window.innerWidth) {
   if (innerWidth <= 605) {
     return 1
@@ -39,3 +50,5 @@ function getItemsBySlide (innerWidth = window.innerWidth) {
     return 4
   }
 }
+
+export default StoresList

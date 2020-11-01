@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Button from '../Button/Button'
 import './CartItem.css'
 
-export default function CartItem (props) {
+const CartItem = props => {
   const [quantity, setQuantity] = useState((props.quantity) ? props.quantity : 1)
 
   function subtract () {
     if (quantity === 1) return
     setQuantity(quantity - 1)
+    props.handleQuantity(quantity)
   }
 
   function sum () {
     if (quantity === props.quantityAvailable) return
     setQuantity(quantity + 1)
+    props.handleQuantity(quantity)
   }
 
   return (
@@ -48,3 +51,17 @@ export default function CartItem (props) {
     </div>
   )
 }
+
+CartItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  quantity: PropTypes.number,
+  quantityAvailable: PropTypes.number,
+
+  handleQuantity: PropTypes.func.isRequired
+}
+
+export default CartItem

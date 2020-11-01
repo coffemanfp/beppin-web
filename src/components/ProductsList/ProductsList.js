@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Product from '../Product/Product'
 import Slider from '../Slider/Slider'
 import './ProductsList.css'
 
-export default function ProductsList ({ products }) {
+const ProductsList = ({ products }) => {
   const [itemsBySlide, setItemBySlide] = useState(getItemsBySlide())
 
   window.addEventListener('resize', () => {
@@ -13,10 +14,7 @@ export default function ProductsList ({ products }) {
   const productsElement = products.map(product =>
     <Product
       key={product.id}
-      name={product.name}
-      images={product.images}
-      currency={product.currency}
-      price={product.price}
+      {...product}
     />
   )
 
@@ -27,6 +25,21 @@ export default function ProductsList ({ products }) {
       itemsBySlide={itemsBySlide}
     />
   )
+}
+
+ProductsList.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
+      quantity: PropTypes.number,
+
+      handleSubtract: PropTypes.func,
+      handleSum: PropTypes.func
+    }).isRequired
+  ).isRequired
 }
 
 function getItemsBySlide (innerWidth = window.innerWidth) {
@@ -42,3 +55,5 @@ function getItemsBySlide (innerWidth = window.innerWidth) {
     return 5
   }
 }
+
+export default ProductsList

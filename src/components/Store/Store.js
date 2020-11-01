@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Store.css'
 
-export default function Store ({ background, logo, name }) {
+const Store = ({ background, logo, name }) => {
   return (
     <a className='store'>
       <div
@@ -20,3 +21,11 @@ export default function Store ({ background, logo, name }) {
     </a>
   )
 }
+
+Store.propTypes = {
+  background: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+}
+
+export default Store

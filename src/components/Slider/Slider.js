@@ -1,47 +1,18 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import Button from '../Button/Button'
 import './Slider.css'
 
-export default class Slider extends Component {
-  constructor (props) {
-    super(props)
+const Slider = ({ initialSlide = 0, items, itemsBySlide = 1, withArrows = true, className }) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-    this.state = {
-      currentSlide: props.currentSlide || 0
-    }
+  useEffect(() => {
+    setCurrentSlide(initialSlide);
+  }, [initialSlide]);
 
-    this.handleNextSlide = this.handleNextSlide.bind(this)
-    this.handlePrevSlide = this.handlePrevSlide.bind(this)
-    this.getCountSlides = this.getCountSlides.bind(this)
-  }
 
-  handleNextSlide () {
-    if (this.state.currentSlide === this.getCountSlides() - 1) {
-      this.setState({
-        currentSlide: 0
-      })
-      return
-    }
-    this.setState({
-      currentSlide: this.state.currentSlide + 1
-    })
-  }
-
-  handlePrevSlide () {
-    if (this.state.currentSlide === 0) {
-      this.setState({
-        currentSlide: this.getCountSlides() - 1
-      })
-      return
-    }
-
-    this.setState({
-      currentSlide: this.state.currentSlide - 1
-    })
-  }
-
-  getCountSlides () {
-    let countSlides = this.props.items.length / (this.props.itemsBySlide || 1)
+  function getCountSlides () {
+    let countSlides = items.length / (itemsBySlide || 1)
     if (countSlides % 1 !== 0) {
       countSlides++
       countSlides -= countSlides % 1
@@ -50,61 +21,83 @@ export default class Slider extends Component {
     return countSlides
   }
 
-  render () {
-    const currentSlide = (this.props.currentSlide === undefined)
-      ? this.state.currentSlide
-      : this.props.currentSlide
-    const itemsBySlide = this.props.itemsBySlide || 1
-    const withArrows = (this.props.withArrows === undefined) ? true : false
-    const countSlides = this.getCountSlides()
-
-    if (currentSlide > countSlides) {
-      this.setState({ currentSlide: countSlides - 1 })
-    }
-
-    const slideTransationStyle = {
-      transform: `translate3d(${(currentSlide) * 100 * -1}%, 0, 0)`
-    }
-    const className = (this.props.className) ? this.props.className : ''
-
+  function getSlides() {
     let lastItemIndex = 0
-    let slides = Array(countSlides)
-
+    let slides = Array(getCountSlides())
+  
     for (let i = 0; i < slides.length; i++) {
       slides[i] = []
-      slides[i].push(this.props.items.slice(lastItemIndex, lastItemIndex + itemsBySlide))
+      slides[i].push(items.slice(lastItemIndex, lastItemIndex + itemsBySlide))
       lastItemIndex += itemsBySlide
     }
 
-    return (
-      <ul className={`slider ${className}`}>
-        <div className='slider__slides' style={slideTransationStyle}>
-          {slides.map((slide, i) =>
-            <Slide
-              key={i}
-              items={[...slide]}
-            />)}
-        </div>
-        {(withArrows && slides.length > 1) &&
-          <div className='slider__controls'>
-            <Button
-              className='slider__control'
-              type='icon'
-              onClick={this.handlePrevSlide}
-            >
-              <span className='fal fa-arrow-left' />
-            </Button>
-            <Button
-              className='slider__control'
-              type='icon'
-              onClick={this.handleNextSlide}
-            >
-              <span className='fal fa-arrow-right' />
-            </Button>
-          </div>}
-      </ul>
-    )
+    return slides
   }
+
+  function handleNextSlide () {
+    if (currentSlide === getCountSlides() - 1) {
+      setCurrentSlide(0)
+      return
+    }
+    setCurrentSlide(currentSlide + 1)
+  }
+
+  function handlePrevSlide () {
+    if (currentSlide === 0) {
+      setCurrentSlide(getCountSlides() - 1)
+      return
+    }
+
+    setCurrentSlide(currentSlide - 1)
+  }
+  
+  const countSlides = getCountSlides()
+  if (currentSlide > countSlides) {
+    setCurrentSlide(countSlides - 1)
+  }
+
+  const slideTransationStyle = {
+    transform: `translate3d(${(currentSlide) * 100 * -1}%, 0, 0)`
+  }
+
+  const slides = getSlides()
+
+  return (
+    <ul className={`slider ${className}`}>
+      <div className='slider__slides' style={slideTransationStyle}>
+        {slides.map((slide, i) =>
+          <Slide
+            key={i}
+            items={[...slide]}
+          />)}
+      </div>
+      {(withArrows && slides.length > 1) &&
+        <div className='slider__controls'>
+          <Button
+            className='slider__control'
+            type='icon'
+            onClick={handlePrevSlide}
+          >
+            <span className='fal fa-arrow-left' />
+          </Button>
+          <Button
+            className='slider__control'
+            type='icon'
+            onClick={handleNextSlide}
+          >
+            <span className='fal fa-arrow-right' />
+          </Button>
+        </div>}
+    </ul>
+  )
+}
+
+Slider.propTypes = {
+  initialSlide: PropTypes.number,
+  items: PropTypes.array.isRequired,
+  itemsBySlide: PropTypes.number,
+  withArrows: PropTypes.bool,
+  className: PropTypes.string
 }
 
 function Slide ({ items }) {
@@ -115,3 +108,5 @@ function Slide ({ items }) {
     </li>
   )
 }
+
+export default Slider
