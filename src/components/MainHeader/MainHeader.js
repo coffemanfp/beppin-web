@@ -2,9 +2,10 @@ import React from 'react'
 import Logo from '../Logo/Logo'
 import Search from '../Search/Search'
 import Button from '../Button/Button'
+import PropTypes from 'prop-types'
 import './MainHeader.css'
 
-export default function MainHeader ({ logo, typeAside, triggerAside }) {
+const MainHeader = ({ logo, typeAside, triggerAside }) => {
 
   const isAsideActived = typeAside !== ''
 
@@ -47,3 +48,11 @@ export default function MainHeader ({ logo, typeAside, triggerAside }) {
     </header>
   )
 }
+
+MainHeader.propTypes = {
+  logo: PropTypes.string.isRequired,
+  typeAside: PropTypes.string.isRequired,
+  triggerAside: PropTypes.func.isRequired
+}
+
+export default MainHeader

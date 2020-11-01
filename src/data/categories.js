@@ -20,31 +20,31 @@ const categories = [
     icon: 'home'
   },
   {
-    name: 'Books',
+    name: 'Babies',
     icon: 'tshirt'
   },
   {
-    name: 'Books',
+    name: 'Health',
     icon: 'tshirt'
   },
   {
-    name: 'Books',
+    name: 'Vehicles',
     icon: 'tshirt'
   },
   {
-    name: 'Books',
+    name: 'Movies',
     icon: 'tshirt'
   },
   {
-    name: 'Books',
+    name: 'Work',
     icon: 'tshirt'
   },
   {
-    name: 'Books',
+    name: 'School',
     icon: 'tshirt'
   },
   {
-    name: 'Books',
+    name: 'Others',
     icon: 'tshirt'
   }
 ]

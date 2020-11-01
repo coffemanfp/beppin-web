@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Button from '../Button/Button'
 import noImage from './../../img/no-image.png'
 import './Product.css'
 
-export default function Product (props) {
+const Product = props => {
   const image = (props.images && props.images.length > 0) ? props.images[0].url : noImage
 
   return (
@@ -41,3 +42,16 @@ export default function Product (props) {
     </a>
   )
 }
+
+Product.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired,
+  quantity: PropTypes.number,
+
+  handleSubtract: PropTypes.func,
+  handleSum: PropTypes.func
+}
+
+export default Product

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import FormControl from '../FormControl/FormControl'
 import Button from '../Button/Button'
 import './SignIn.css'
 
-export default function SignIn ({ type, onSubmit }) {
+const SignIn = ({ type, onSubmit }) => {
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -50,3 +51,10 @@ export default function SignIn ({ type, onSubmit }) {
     </form>
   )
 }
+
+SignIn.propTypes = {
+  type: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired
+}
+
+export default SignIn

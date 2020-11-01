@@ -30,7 +30,8 @@ function categoriesListMobile (categories) {
           className='categories-list__category'
         >
           <Category
-            category={category}
+            icon={category.icon}
+            name={category.name}
           />
         </li>
       )}
@@ -42,7 +43,8 @@ function categoriesListScreen (categories, itemsBySlide) {
   const categoriesList = categories.map(category =>
     <Category
       key={category.name}
-      category={category}
+      icon={category.icon}
+      name={category.name}
     />
   )
 

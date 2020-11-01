@@ -2,7 +2,7 @@ import React from 'react'
 import noItemsImage from '../../img/noItems.png'
 import './NoItems.css'
 
-export default function NoItems () {
+const NoItems = () => {
   return (
     <div className='no-items'>
       <img src={noItemsImage} alt='No items' className='no-items__image' />
@@ -10,3 +10,5 @@ export default function NoItems () {
     </div>
   )
 }
+
+export default NoItems

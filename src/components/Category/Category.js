@@ -1,20 +1,28 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Category.css'
 
-export default function Category ({ category }) {
-  const icon = (category.icon.includes('.'))
+const Category  = ({ icon, name }) => {
+  const image = (icon.includes('.'))
     ? <img
       className='category__icon'
-      src={category.icon}
-      alt={category.name}
+      src={icon}
+      alt={name}
     />
-    : <span className={`category__icon fal fa-${category.icon}`} />
+    : <span className={`category__icon fal fa-${icon}`} />
 
 
   return (
     <a href className='category'>
-      {icon}
-      <h4 className='category__name'>{category.name}</h4>
+      {image}
+      <h4 className='category__name'>{name}</h4>
     </a>
   )
 }
+
+Category.propTypes = {
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+}
+
+export default Category
